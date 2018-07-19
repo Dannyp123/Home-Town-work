@@ -18,8 +18,12 @@ def get_inventory():
             Topping('ham', .25),
             Topping('sausage', .25)
         ])
-    ], [Side('Breadsticks', 2.00),
-        Side('2L Coke', 1.50)])
+    ], [
+        Side('Breadsticks', 2.00),
+        Side('2L Coke', 1.50),
+        Side('Cinna Sticks', 2.50),
+        Side('Sweet Tea, by the gallon', 7.50)
+    ])
     return inventory
 
 

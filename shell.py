@@ -3,7 +3,7 @@ from core import *
 
 def input_name():
     print('Welcome to hometown pizza!')
-    name = input('What is the name for this order: ')
+    name = input('What is the name for this order: ').title()
     return name
 
 
@@ -22,7 +22,7 @@ def get_inventory():
         Side('Breadsticks', 2.00),
         Side('2L Coke', 1.50),
         Side('Cinna Sticks', 2.50),
-        Side('Sweet Tea, by the gallon', 7.50)
+        Side('Sweet Tea', 7.50)
     ])
     return inventory
 
@@ -36,13 +36,17 @@ def ordering_food(name, inventory, order):
         if inventory.in_stock(choice):
             item = inventory.get_item(choice)
             order.add_item(item)
-            print('Ok, 1 {} added to your order'.format(item.name))
+            print('Ok, 1 {} added to your order. Anything else?'.format(
+                item.name))
+            print()
         if choice == 'done':
             print('\nThank you for your business!')
+            print('\nHave a blessed day!')
             print('\nHere is your receipt: ')
             print(order)
             break
         elif choice == 'quit':
+            print('Have a blessed day!')
             quit()
 
 
